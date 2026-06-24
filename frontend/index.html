@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/html-docx-js@0.3.1/dist/html-docx.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Research Assistant</h1>
+            <p>Your guide from topic selection to final defense</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="topic">Topic Selection</button>
+            <button class="tab-btn" data-tab="proposal">Proposal Generator</button>
+        </nav>
+
+        <main>
+            <div id="topic-tab" class="tab-content active">
+                <h2>Generate Research Topics</h2>
+                <form id="topic-form">
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <input type="text" id="department" name="department" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="degree">Degree Level</label>
+                        <select id="degree" name="degree" required>
+                            <option value="">Select...</option>
+                            <option value="Undergraduate">Undergraduate</option>
+                            <option value="Masters">Masters</option>
+                            <option value="PhD">PhD</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Research Interest</label>
+                        <textarea id="interest" name="interest" rows="3" required></textarea>
+                    </div>
+                    <button type="submit">Generate Topics</button>
+                </form>
+                <div id="topic-results"></div>
+            </div>
+
+            <div id="proposal-tab" class="tab-content">
+                <h2>Generate Research Proposal</h2>
+                <form id="proposal-form">
+                    <div class="form-group">
+                        <label for="topic">Research Topic</label>
+                        <input type="text" id="topic" name="topic" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="proposal-department">Department</label>
+                        <input type="text" id="proposal-department" name="department" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="proposal-degree">Degree Level</label>
+                        <select id="proposal-degree" name="degree" required>
+                            <option value="">Select...</option>
+                            <option value="Undergraduate">Undergraduate</option>
+                            <option value="Masters">Masters</option>
+                            <option value="PhD">PhD</option>
+                        </select>
+                    </div>
+                    <button type="submit">Generate Proposal</button>
+                </form>
+                <div id="proposal-results"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
